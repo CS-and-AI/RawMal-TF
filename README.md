@@ -1,5 +1,6 @@
 # RawMal-TF
-This repository provides a comprehensive dataset for malware classification research, combining raw binaries with pre-extracted feature vectors. The dataset includes over **160 GB of Windows PE malware samples**, categorized by **malware type** and **malware family**, and is suitable for **TODO**.
+This repository provides a comprehensive dataset for malware classification research, combining raw binaries with pre-extracted feature vectors. The dataset includes over **160 GB of Windows PE malware samples**, sourced from publicly available repositories such as **VirusShare**, **MalwareBazaar**, and **VX Underground**. The samples are categorized by **malware type** and **malware family**.
+
 
 ## 📦 Dataset Structure
 
