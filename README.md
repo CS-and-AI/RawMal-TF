@@ -20,7 +20,7 @@ The pre-extracted vectors are suitable for immediate use with machine learning m
 
 ## 📥 Download
 
-Due to the dataset's size and sensitivity, distribution is handled manually or via internal storage.
+Due to the dataset's size and sensitivity, distribution is handled manually.
 
 | Subset          | Structure         | Format        | Approx. Size |
 |------------------|------------------|---------------|--------------|
