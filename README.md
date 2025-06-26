@@ -29,17 +29,6 @@ Due to the dataset's size and sensitivity, distribution is handled manually.
 
 > 🔗 **Google Drive download link:** [Link](https://drive.google.com/drive/folders/1wYQPjoZ48BaFmVeW3leMVocqHbjV6TBm?usp=sharing)
 
-## 🧠 Usage
-
-**TODO**
-
-The dataset can be used directly for:
-
-- Training machine learning models for malware detection
-- Benchmarking feature extraction methods
-- Comparing classification at the type vs. family level
-- Analyzing classification errors across malware categories
-
 
 ## 🧬 Feature Vectors
 
