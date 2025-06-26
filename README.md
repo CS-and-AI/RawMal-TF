@@ -41,5 +41,28 @@ The dataset can be used directly for:
 - Analyzing classification errors across malware categories
 
 
-## 📁 Directory Layout
+## 🧬 Feature Vectors
+
+Each feature vector is stored as a JSON object inside a `.json` file. All samples are combined into a single JSON array. Each object contains structured metadata and statistics extracted from one Windows PE binary. This format is suitable for loading the entire dataset into memory or iterating over it for batch processing in machine learning workflows.
+
+
+### 📄 Format Overview
+
+| Field              | Description |
+|--------------------|-------------|
+| `sha256`           | SHA-256 hash of the binary (acts as unique identifier) |
+| `label`            | Classification label |
+| `histogram`        | Byte histogram (256-length array of byte value frequencies) |
+| `byteentropy`      | Flattened 2D histogram of byte value vs. entropy |
+| `strings`          | String metadata: total count, average length, entropy, printable distribution |
+| `general`          | General binary properties (e.g., file size, virtual size, presence of resources) |
+| `header`           | PE header fields, including COFF and optional header values |
+| `section`          | Information about PE sections (e.g., name, size, entropy, access flags) |
+| `imports`          | Dictionary of imported functions grouped by DLL |
+| `exports`          | List of exported symbols (if present) |
+| `datadirectories`  | PE data directories (IAT, resource table, TLS, etc.) |
+
+
+
+
 
