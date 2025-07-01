@@ -32,15 +32,16 @@ Due to the dataset's size and sensitivity, distribution is handled manually.
 
 ## 🧬 Feature Vectors
 
-Each feature vector is stored as a JSON object inside a `.json` file. All samples are combined into a single JSON array. Each object contains structured metadata and statistics extracted from one Windows PE binary. This format is suitable for loading the entire dataset into memory or iterating over it for batch processing in machine learning workflows.
+Each feature vector is stored as a JSON object inside a `.jsonl` file. All samples are combined into a single JSON array. Each object contains structured metadata and statistics extracted from one Windows PE binary. This format is suitable for loading the entire dataset into memory or iterating over it for batch processing in machine learning workflows.
 
+The feature vectors include both **malicious samples** and **clean (benign) binaries** prepared for direct use in machine learning experiments. This allows straightforward training of binary classifiers without additional preprocessing.
 
 ### 📄 Format Overview
 
 | Field              | Description |
 |--------------------|-------------|
 | `sha256`           | SHA-256 hash of the binary (acts as unique identifier) |
-| `label`            | Classification label |
+| `label`            | Classification label (`1` = malicious, `0` = benign) |
 | `histogram`        | Byte histogram (256-length array of byte value frequencies) |
 | `byteentropy`      | Flattened 2D histogram of byte value vs. entropy |
 | `strings`          | String metadata: total count, average length, entropy, printable distribution |
@@ -50,6 +51,30 @@ Each feature vector is stored as a JSON object inside a `.json` file. All sample
 | `imports`          | Dictionary of imported functions grouped by DLL |
 | `exports`          | List of exported symbols (if present) |
 | `datadirectories`  | PE data directories (IAT, resource table, TLS, etc.) |
+
+> 💡 **Note:** The dataset combines malicious and benign samples, enabling immediate use for training and evaluating binary classifiers.
+
+
+## 📈 Loading Data
+
+The loading logic is based on the **original Ember reference Jupyter notebook**, which demonstrates how to generate vectorized features and load them for training. To make this process straightforward, we have preserved the **directory structure expected by the Ember code**, but extracted and simplified everything into a standalone script so you can integrate it into your own pipelines more easily.
+
+You can find this example script [here](scripts/load.py).
+
+After running the script successfully, you should see an output similar to:
+```
+    Dataset loaded successfully!
+    - Training set size: (13468, 2381)
+    - Test set size: (3368, 2381)
+    - Labels distribution in train: clean=6711, malware=6757
+    - Labels distribution in test: clean=1707, malware=1661
+
+```
+
+> **Note:**  This output corresponds to the example path specified in the script.
+
+
+
 
 
 
