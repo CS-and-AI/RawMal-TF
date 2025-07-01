@@ -75,6 +75,23 @@ After running the script successfully, you should see an output similar to:
 
 
 
+## 🫆 Citing
+If you use this dataset in your research or publications, please reference the following paper:
+```
+@misc{balik2025rawmaltfrawmalwaredataset,
+      title={RawMal-TF: Raw Malware Dataset Labeled by Type and Family}, 
+      author={B{\'a}lik, David and Jure{\v{c}}ek, Martin and Stamp, Mark},
+      year={2025},
+      eprint={2506.23909},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR},
+      url={https://arxiv.org/abs/2506.23909}
+}
+```
+
+
+
+
 
 
 
