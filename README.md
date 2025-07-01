@@ -77,7 +77,8 @@ After running the script successfully, you should see an output similar to:
 
 
 ## 🫆 Citing
-If you use this dataset in your research or publications, please reference the following paper:
+If you use this dataset in your research or publications, please reference the following [paper](https://arxiv.org/abs/2506.23909).
+
 ```
 @misc{balik2025rawmaltfrawmalwaredataset,
       title={RawMal-TF: Raw Malware Dataset Labeled by Type and Family}, 
